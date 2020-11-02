@@ -1,8 +1,8 @@
-# _{Application Name}_
+# _Places you've been!_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _Travel journal site to keep track of your places user has visited, 02.nov.2020_
 
-#### By _**{List of contributors}**_
+#### By _**Danielle Thompson & Jeff Chiu**_
 
 ## Description
 
@@ -34,6 +34,9 @@ _2. Navigate into the `{NAME_OF_DIRECTORY}` directory, and open in Visual Studio
 _3. Open index.html in Chrome or preferred browser_
 
 #### To see my live website go to {GH_PAGES_LINK_HERE}!
+
+## Test Specs
+Describe
 
 ## Known Bugs
 
