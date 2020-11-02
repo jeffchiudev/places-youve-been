@@ -6,7 +6,7 @@
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This project is a website that tracks all of the places I've been. Each destination includes some information about where specifically I went in a country, along with notable landmarks, what time of year I visited, and additional notes about restaurants and other experiences I had while there. You can peruse through the places I have traveled to by clicking through each individual places' link._
 
 ## Setup/Installation Requirements
 

@@ -53,9 +53,23 @@ Location.prototype.placeToGo = function() {
   return this.city + ", " + this.country;
 }
 
-//$(document).ready(function) {
+//User Interface Logic 
+let userPlace = new Destinations();
 
-//}
+$(document).ready(function() {
+  $("form#placeInput").submit(function(event) {
+    const userCountry = $("input#userCountry").val();
+    const userCity = $("input#userCity").val();
+    const userLandmark = $("input#userLandmark").val();
+    
+    let newPlace = new Location(userCountry, userCity, userLandmark);
+    userPlace.addPlace(newPlace);
+    console.log(userPlace.places);
+
+    event.preventDefault();
+  });
+});
+
 
 
 //Key: 
