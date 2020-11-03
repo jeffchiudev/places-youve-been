@@ -1,7 +1,7 @@
 //business logic for destinations
 function Destinations() {
   this.places = []; //e.g. Canada, USA, Japan etc. 
-  this.placeID = 0;
+  this.placeId = 0;
 }
 
 Destinations.prototype.addPlace = function(place) {
@@ -10,8 +10,8 @@ Destinations.prototype.addPlace = function(place) {
 }
 
 Destinations.prototype.assignId = function() {
-  this.placeID += 1;
-  return this.placeID;
+  this.placeId += 1;
+  return this.placeId;
 }
 
 Destinations.prototype.findPlace = function(id) {
@@ -65,12 +65,30 @@ function displayLocationDetails(locationToDisplay) {
   placesList.html(htmlForLocationInfo);
 };
 
+function showLocation(locationId) {
+  const location = userPlace.findPlace(locationId);
+  $("show-locations").show()
+  $("user-country").html(location.userCountry);
+  $("user-city").html(location.userCity);
+  $("user-landmark").html(location.userLandmark);
+  let buttons = $("#buttons");
+  buttons.empty();
+  buttons.append("<button class="deleteButton" id=" + + location.id + ">Delete</button>");
+}
+
+function attachLocationlisteners() {
+  $("ul#locations").on("click", "li", function() {
+    showLocation(this.id);
+  });
+};
+
 $(document).ready(function() {
+  attachLocationlisteners();
   $("form#new-location").submit(function(event) {
     event.preventDefault();
     const userCountry = $("input#new-country").val();
     const userCity = $("input#new-city").val();
-    const userLandmark = $("input#new-Landmark").val();
+    const userLandmark = $("input#new-landmark").val();
     
     let newPlace = new Location(userCountry, userCity, userLandmark);
     userPlace.addPlace(newPlace);
