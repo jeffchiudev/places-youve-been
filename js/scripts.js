@@ -67,18 +67,23 @@ function displayLocationDetails(locationToDisplay) {
 
 function showLocation(locationId) {
   const location = userPlace.findPlace(locationId);
-  $("show-locations").show()
+  $("#show-locations").show();
   $("user-country").html(location.userCountry);
   $("user-city").html(location.userCity);
   $("user-landmark").html(location.userLandmark);
   let buttons = $("#buttons");
   buttons.empty();
-  buttons.append("<button class="deleteButton" id=" + + location.id + ">Delete</button>");
+  buttons.append("<button class='deleteButton' id=" + location.id + ">Delete</button>");
 }
 
 function attachLocationlisteners() {
   $("ul#locations").on("click", "li", function() {
     showLocation(this.id);
+  });
+  $("#buttons").on("click", ".deleteButton", function () {
+    userPlace.deletePlace(this.id);
+    $("#show-locations").hide();
+    displayLocationDetails(userPlace);
   });
 };
 
@@ -90,6 +95,10 @@ $(document).ready(function() {
     const userCity = $("input#new-city").val();
     const userLandmark = $("input#new-landmark").val();
     
+    $("input#new-country").val("");
+    $("input#new-city").val("");
+    $("input#new-landmark").val("");
+
     let newPlace = new Location(userCountry, userCity, userLandmark);
     userPlace.addPlace(newPlace);
     displayLocationDetails(userPlace);

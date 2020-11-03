@@ -11,28 +11,39 @@
 </head>
 <body>
   <div class="container">
-    <div class="input">
-      <form id="new-location">
-        <label for="new-country">Country</label>
-        <input type="text" id= "new-country">
-        <label for="new-city">City</label>
-        <input type="text" id= "new-city">
-        <label for="new-landmark">Landmark</label>
-        <input type="text" id= "new-landmark">
-        <button type="submit" class="btn btn-primary">Add Location</button>
-      </form>
-    </div>
-    <div>
-      <h2>Locations</h2>
-      <ul id="locations">
-      </ul>
-    </div>
-    <div id="show-locations">
-      <p>Country <span class=user-country></span></p>
-      <p>City: <span class=user-state></span></p>
-      <p>Landmark: <span class=user-landmark></span></p>
-      <div id="buttons">
+    <h1>Travel Book</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <hr>
+        <h2>Add a place you've visited:</h2>
+        <form id="new-location">
+          <div class="form-group">
+            <label for="new-country">Country</label>
+            <input type="text" class="form-control" id= "new-country">
+          </div>
+          <div class="form-group">
+            <label for="new-city">City</label>
+            <input type="text" class="form-control" id= "new-city">
+          </div>
+          <div class="form-group">
+            <label for="new-landmark">Landmark</label>
+            <input type="text" class="form-control" id= "new-landmark">
+          </div>
+          <button type="submit" class="btn-primary">Add Location</button>
+        </form>
+        <h2>Locations</h2>
+        <ul id="locations">
+        </ul>
       </div>
+      <div class="col-md-6">
+        <div id="show-locations">
+          <p>Country <span class=user-country></span></p>
+          <p>City: <span class=user-city></span></p>
+          <p>Landmark: <span class=user-landmark></span></p>
+          <div id="buttons">
+          </div>
+        </div>
+      </div>    
     </div>
   </div>
 </body>
