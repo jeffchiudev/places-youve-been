@@ -56,17 +56,25 @@ Location.prototype.placeToGo = function() {
 //User Interface Logic 
 let userPlace = new Destinations();
 
+function displayLocationDetails(locationToDisplay) {
+  let placesList = $("ul#locations");
+  let htmlForLocationInfo = "";
+  locationToDisplay.places.forEach(function(place) {
+    htmlForLocationInfo += "<li id=" + place.id + ">" + place.country + " " + place.city + " " + place.landmark + "</li>";
+  });
+  placesList.html(htmlForLocationInfo);
+};
+
 $(document).ready(function() {
-  $("form#placeInput").submit(function(event) {
-    const userCountry = $("input#userCountry").val();
-    const userCity = $("input#userCity").val();
-    const userLandmark = $("input#userLandmark").val();
+  $("form#new-location").submit(function(event) {
+    event.preventDefault();
+    const userCountry = $("input#new-country").val();
+    const userCity = $("input#new-city").val();
+    const userLandmark = $("input#new-Landmark").val();
     
     let newPlace = new Location(userCountry, userCity, userLandmark);
     userPlace.addPlace(newPlace);
-    console.log(userPlace.places);
-
-    event.preventDefault();
+    displayLocationDetails(userPlace);
   });
 });
 

@@ -11,14 +11,28 @@
 </head>
 <body>
   <div class="container">
-    <form id="new-location">
-      <label for="new-country">Country</label>
-      <input type="text" id= "new-country">
-      <label for="new-city">City</label>
-      <input type="text" id= "new-city">
-      <label for="new-landmark">Landmark</label>
-      <input type="text" id= "new-landmark">
-    </form>
+    <div class="input">
+      <form id="new-location">
+        <label for="new-country">Country</label>
+        <input type="text" id= "new-country">
+        <label for="new-city">City</label>
+        <input type="text" id= "new-city">
+        <label for="new-landmark">Landmark</label>
+        <input type="text" id= "new-landmark">
+      </form>
+    </div>
+    <div>
+      <h2>Locations</h2>
+      <ul id="locations">
+      </ul>
+    </div>
+    <div id="show-locations">
+      <p>Country <span class=user-country></span></p>
+      <p>City: <span class=user-state></span></p>
+      <p>Landmark: <span class=user-landmark></span></p>
+      <div id="buttons">
+      </div>
+    </div>
   </div>
 </body>
 </html>
